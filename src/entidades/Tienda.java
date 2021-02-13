@@ -1,10 +1,10 @@
 package entidades;
 
 public class Tienda {
-	private String Dueño;
+	private String Dueno;
 	private String Direccion;
 	private String Telefono;
-		
+	private String Prueba;	
 	
 	
 	
