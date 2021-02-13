@@ -5,7 +5,7 @@ public class Tienda {
 	private String Direccion;
 	private String Telefono;
 	
-	
+	 
 	public String getDuenio() {
 		return Duenio;
 	}
