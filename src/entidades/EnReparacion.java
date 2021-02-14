@@ -7,7 +7,7 @@ public class EnReparacion extends Estado {
 	}
 
 	public Estado getEstadoSiguiente() {
-		// TODO Auto-generated method stub
+		
 		return this;
 
 	}
