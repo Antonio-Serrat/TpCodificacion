@@ -9,6 +9,7 @@ public class Item {
 	private Double costoAlquiler;
 	private Date fechaDevolucion = new Date();
 	private int historialAlquiler; //dias de alquiler de 1 a 30
+	public camaraFotografica camara;
 	
 	public int getCodReferencia() {
 		return codReferencia;
