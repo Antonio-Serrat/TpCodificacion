@@ -8,7 +8,47 @@ public class Item {
 	private String estado;
 	private Double costoAlquiler;
 	private Date fechaDevolucion = new Date();
-	//historialAlquiler
+	private int historialAlquiler; //dias de alquiler de 1 a 30
+	
+	public int getCodReferencia() {
+		return codReferencia;
+	}
+
+	public String getEstado() {
+		return estado;
+	}
+
+	public Double getCostoAlquiler() {
+		return costoAlquiler;
+	}
+
+	public Date getFechaDevolucion() {
+		return fechaDevolucion;
+	}
+
+	public int getHistorialAlquiler() {
+		return historialAlquiler;
+	}
+
+	public void setCodReferencia(int codReferencia) {
+		this.codReferencia = codReferencia;
+	}
+
+	public void setEstado(String estado) {
+		this.estado = estado;
+	}
+
+	public void setCostoAlquiler(Double costoAlquiler) {
+		this.costoAlquiler = costoAlquiler;
+	}
+
+	public void setFechaDevolucion(Date fechaDevolucion) {
+		this.fechaDevolucion = fechaDevolucion;
+	}
+
+	public void setHistorialAlquiler(int historialAlquiler) {
+		this.historialAlquiler = historialAlquiler;
+	}
 	
 	public void cambiarEstado (Estado estado) {
 		
