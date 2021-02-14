@@ -19,9 +19,9 @@ public class Tienda {
 	}
 	
 	public void Menu() {
-		System.out.println("*-*-*-*-*-*-*-*-*-*-*-");
+		System.out.println("*-*-*-*-*-*-*-*-*-*-*-*-");
 		System.out.println("Bienvenido");
-		System.out.println("*-*-*-*-*-*-*-*-*-*-*-");
+		System.out.println("*-*-*-*-*-*-*-*-*-*-*-*-");
 		
 		System.out.println("-Ingrese 1 para obtener camaras disponibles");
 		System.out.println("-Ingrese 2 para alquilar una camara");
