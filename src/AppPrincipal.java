@@ -5,12 +5,11 @@ import entidades.*;
 public class AppPrincipal {
 
 	public static void main(String[] args) {
+		Item camara = null;
 		Scanner sc = new Scanner(System.in);
 		
 		Tienda tienda = new Tienda(null, null, 0);
-		tienda.setDuenio("Jorge PORrfa");
-		tienda.setDireccion("Guatemala 625");
-		tienda.setTelefono(4890709);
+		tienda.infoTienda();
 		
 		
 		int opcion = -1;
@@ -18,30 +17,31 @@ public class AppPrincipal {
 			tienda.Menu();
 		opcion = sc.nextInt();
 		sc.nextLine();
-		}
-		switch (opcion) {
-			
-		case 1: 
-			tienda.obtenerCamarasDisponibles();
-			break;
-		case 2:
-			tienda.alquilar();
-			break;
-		case 3:
-			tienda.cambiarEstadoCamaras();
-			break;
-		case 4:
-			tienda.penalizar();
-			break;
-		case 5:
-			tienda.obtenerCamarasConRetraso();
-			break;
-		case 6:
-			tienda.obtenerCamarasEnReparacion();
-			break;
-		case 7:
-			tienda.repararCamara();
-			break;
+		
+			switch (opcion) {
+				
+			case 1: 
+				;
+				break;
+			case 2:
+				;
+				break;
+			case 3:
+				;
+				break;
+			case 4:
+				;
+				break;
+			case 5:
+				;
+				break;
+			case 6:
+				;
+				break;
+			case 7:
+				;
+				break;
+			}
 		}
 	}
 
