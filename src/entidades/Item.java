@@ -51,7 +51,7 @@ public class Item {
 	}
 	
 	public void cambiarEstado (Estado estado) {
-		
+		estado.getEstadoSiguiente();
 	}
 		
 	}
