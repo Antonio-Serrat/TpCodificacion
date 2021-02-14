@@ -5,6 +5,7 @@ import entidades.*;
 public class AppPrincipal {
 
 	public static void main(String[] args) {
+
 		Item camara = null;
 		Scanner sc = new Scanner(System.in);
 		
@@ -43,6 +44,7 @@ public class AppPrincipal {
 				break;
 			}
 		}
+
 	}
 
 }
