@@ -8,7 +8,7 @@ public class AppPrincipal {
 		Scanner sc = new Scanner(System.in);
 		
 		Tienda tienda = new Tienda(null, null, 0);
-		tienda.setDuenio("Jorge onorfa");
+		tienda.setDuenio("Jorge PORrfa");
 		tienda.setDireccion("Guatemala 625");
 		tienda.setTelefono(4890709);
 		
