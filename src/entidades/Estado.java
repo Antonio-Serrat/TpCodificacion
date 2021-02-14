@@ -6,9 +6,9 @@ public abstract class Estado {
 	protected String nombre;
 	private Date fecha = new Date();
 	
-	public Estado getEstadoSiguiente() {
-		return null;
-	} 
+	public abstract Estado getEstadoSiguiente();
+		
+	
 		
 		public String getNombre() {
 		return nombre;
