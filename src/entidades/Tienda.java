@@ -8,9 +8,6 @@ public class Tienda {
 	private String Duenio = "Jose Rutter";
 	private String Direccion = "3874 y 2663";
 	private int Telefono = 223457638;
-	public void camarasDisponibles() {
-	}
-	
 	
 	
 	public Tienda(String Duenio, String Direccion, int Telefono) {
@@ -54,7 +51,16 @@ public class Tienda {
 	}
 	
 	
+	
+	public  void agregarCamara () {
+		
+	}
+	
 	public  void alquilar () {
+		
+	}
+	
+	public  void cambiarEstadoCamara () {
 		
 	}
 	
@@ -62,15 +68,15 @@ public class Tienda {
 		
 	}
 	
-	public  void obtenerCamarasDisponibles() {
+	public  void camarasDisponibles() {
 		
 	}	
 	
-	public  void obtenerCamarasConRetraso() {
+	public  void camarasConRetraso() {
 		
 	}	
 	
-	public  void obtenerCamarasEnReparacion() {
+	public  void camarasEnReparacion() {
 		
 	}
 	
