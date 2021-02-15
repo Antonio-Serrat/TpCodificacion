@@ -5,6 +5,7 @@ import java.util.Date;
 
 
 public class Tienda {
+  
 	private String Duenio = "Jose Rutter";
 	private String Direccion = "3874 y 2663";
 	private int Telefono = 223457638;
@@ -61,6 +62,7 @@ public class Tienda {
 	}
 	
 	public  void cambiarEstadoCamara () {
+
 		
 	}
 	
