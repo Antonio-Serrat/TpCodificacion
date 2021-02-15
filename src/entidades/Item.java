@@ -11,6 +11,12 @@ public class Item {
 	private int historialAlquiler; //dias de alquiler de 1 a 30
 	public camaraFotografica camara;
 	
+	
+	public Item(int codReferencia) {
+		super();
+		this.codReferencia = codReferencia;
+	}
+
 	public int getCodReferencia() {
 		return codReferencia;
 	}
