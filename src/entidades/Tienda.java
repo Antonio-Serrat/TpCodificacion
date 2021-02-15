@@ -8,7 +8,6 @@ public class Tienda {
 	private String Duenio = "Jose Rutter";
 	private String Direccion = "3874 y 2663";
 	private int Telefono = 223457638;
-	private String estadoCamara = "disponible";
 	public void camarasDisponibles() {
 	}
 	
@@ -30,7 +29,7 @@ public class Tienda {
 		System.out.println("Bienvenido");
 		System.out.println("*-*-*-*-*-*-*-*-*-*-*-*-");
 		
-		System.out.println("-Ingrese 1 para obtener camaras disponibles");
+		System.out.println("-Ingrese 1 para agregar una nueva camara");
 		System.out.println("-Ingrese 2 para obtener camaras disponibles");
 		System.out.println("-Ingrese 3 para alquilar una camara");
 		System.out.println("-Ingrese 4 para cambiar el estado de una camara ");
@@ -54,14 +53,6 @@ public class Tienda {
 		return Telefono;
 	}
 	
-	
-	public String getEstadoCamara() {
-		return estadoCamara;
-	}
-	
-	public void setEstadoCamara(String estadoCamara) {
-		estadoCamara = estadoCamara;
-	}	
 	
 	public  void alquilar () {
 		
