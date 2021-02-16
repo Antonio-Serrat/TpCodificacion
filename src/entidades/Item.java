@@ -17,12 +17,14 @@ public class Item {
 		this.codReferencia = codReferencia;
 	}
 	
+
 	public String getCamara() {
 		return camara.getMarca();
 	}
 
 	public void setCamara(CamaraFotografica camara) {
 		this.camara = camara;
+		
 	}
 
 	public int getCodReferencia() {

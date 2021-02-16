@@ -35,6 +35,7 @@ public class AppPrincipal {
 				int codReferencia = sc.nextInt();
 				sc.nextLine();
 				
+<<<<<<< HEAD
 				System.out.print("Ingrese la marca del producto ");
 				String marca = sc.nextLine();
 				
@@ -48,6 +49,9 @@ public class AppPrincipal {
 				item.setCamara(itemDetails);
 				tienda.agregarlistaDeItems(item);
 				;
+=======
+				
+>>>>>>> branch 'Antonio' of git@github.com:Antonio-Serrat/TpCodificacion.git
 				break;
 			case 2:
 				
