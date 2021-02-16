@@ -13,6 +13,13 @@ public class CamaraFotografica {
 		this.modelo = modelo;
 		this.soporteFlash = soporteFlash;
 	}
+	public CamaraFotografica(String marca, String modelo) {
+		super();
+		this.marca = marca;
+		this.modelo = modelo;
+		
+	}
+	
 	
 	public String getMarca() {
 		return marca;

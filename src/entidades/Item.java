@@ -18,7 +18,7 @@ public class Item {
 	}
 	
 	public String getCamara() {
-		return camara.getModelo();
+		return camara.getMarca();
 	}
 
 	public void setCamara(CamaraFotografica camara) {

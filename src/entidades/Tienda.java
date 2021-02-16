@@ -34,9 +34,12 @@ public class Tienda {
 	}
 	
 	public void verListaDeItems(){
-		System.out.println("las camaras disponibles son");
+		System.out.println("las camaras disponibles son: ");
 		for (Item item : listaDeItems) {
-			System.out.println(item.getCodReferencia());			
+			System.out.println("codigo de referencia: " 
+								+item.getCodReferencia()+" " 
+								+" marca: "
+								+ item.getCamara());			
 		}
 	}
 
