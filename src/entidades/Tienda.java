@@ -22,7 +22,32 @@ public class Tienda {
 		this.listaDeItems = new ArrayList<>();
 	}
 	
-	
+	public void alquilar(Cliente cliente, Item item) {	
+		
+		for (Item i : listaDeItems) {
+			if (i.getCodReferencia() == item.getCodReferencia()) {
+				if (i.getEstado().equals("Disponible")) {
+					i.setEstado("alquilado");
+					System.out.println("la alquilaste");
+				}else {
+					i.setEstado("Disponible");
+					System.out.println("estaba alquilada ahora la cambiaste a disponible");
+				}
+				
+			}else {
+				//System.out.println("no hay ninguna camara con ese codigo");
+			}
+		}
+	} 
+		
+//		if(item.getEstado().equals("Disponible")) {
+//			item.setEstado("alquilada");
+//			System.out.println("has alquilado tu camara");
+//		}else {
+//			System.out.println("la camara ya se encuentra alquilada");
+//			}
+		
+		
 	
 	public void agregarlistaDeItems(Item item) {
 		this.listaDeItems.add(item);
@@ -93,9 +118,7 @@ public class Tienda {
 		
 	}
 	
-	public  void alquilar () {
-		
-	}
+	
 	
 	public  void cambiarEstadoCamara () {
 
