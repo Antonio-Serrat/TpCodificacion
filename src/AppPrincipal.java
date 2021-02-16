@@ -18,6 +18,10 @@ public class AppPrincipal {
 		tienda.infoTienda();
 		tienda.agregarlistaDeItems(camaraSony);
 		
+		Cliente pepe = new Cliente("pepe");
+		
+		tienda.alquilar(pepe, camaraSony);
+		
 		int opcion = -1;
 		while (opcion != 0) {
 			tienda.Menu();
@@ -52,6 +56,23 @@ public class AppPrincipal {
 				;
 				break;
 			case 3:
+				
+				System.out.print("Ingrese su nombre  ");
+				
+				String nombre = sc.nextLine();
+				Cliente nuevoCliente = new Cliente(nombre);
+				
+				tienda.verListaDeItems();
+				
+				System.out.println("ingrese el codigo de la camara que desee alquilar");
+				int codRef = sc.nextInt();
+				
+				
+				sc.nextLine();
+				Item itemNuevo = new Item(codRef);
+				
+				
+				tienda.alquilar(nuevoCliente, itemNuevo);
 				;
 				break;
 			case 4:
