@@ -62,7 +62,7 @@ public class AppPrincipal {
 				String nombre = sc.nextLine();
 				Cliente nuevoCliente = new Cliente(nombre);
 				
-				tienda.verListaDeItems();
+				tienda.verCamarasDisponibles();
 				
 				System.out.println("ingrese el codigo de la camara que desee alquilar");
 				int codRef = sc.nextInt();
