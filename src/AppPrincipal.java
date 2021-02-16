@@ -51,7 +51,7 @@ public class AppPrincipal {
 				break;
 			case 2:
 				
-				tienda.verListaDeItems();
+				tienda.verCamarasDisponibles();
 				
 				;
 				break;

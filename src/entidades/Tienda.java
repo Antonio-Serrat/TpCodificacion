@@ -134,8 +134,17 @@ public class Tienda {
 		
 	}
 	
-	public  void camarasDisponibles() {
-		
+	public  void verCamarasDisponibles() {
+		System.out.println("las camaras disponibles son: ");
+		for (Item item : listaDeItems) {
+			if(item.getEstado().equals("Disponible")) {
+				System.out.println("codigo de referencia: " 
+						+item.getCodReferencia()+" " 
+						+" marca: "
+						+ item.getCamara());	
+			}
+					
+		}
 	}	
 	
 	public  void camarasConRetraso() {
