@@ -39,15 +39,7 @@ public class Tienda {
 			}
 		}
 	} 
-		
-//		if(item.getEstado().equals("Disponible")) {
-//			item.setEstado("alquilada");
-//			System.out.println("has alquilado tu camara");
-//		}else {
-//			System.out.println("la camara ya se encuentra alquilada");
-//			}
-		
-		
+	
 	
 	public void agregarlistaDeItems(Item item) {
 		this.listaDeItems.add(item);
@@ -120,8 +112,21 @@ public class Tienda {
 	
 	
 	
-	public  void cambiarEstadoCamara () {
-
+	public  void cambiarEstadoCamara (Item item) {
+		for (Item i : listaDeItems) {
+			if (i.getCodReferencia() == item.getCodReferencia()) {
+				if (i.getEstado().equals("Disponible")) {
+					i.setEstado("alquilado");
+					System.out.println("Estado cambiado a alquilado");
+				}else {
+					i.setEstado("Disponible");
+					System.out.println("Estado cambiado a disponible");
+				}
+				
+			}else {
+				//System.out.println("no hay ninguna camara con ese codigo");
+			}
+		}
 		
 	}
 	
