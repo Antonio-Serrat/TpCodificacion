@@ -6,12 +6,17 @@ public class AppPrincipal {
 
 	public static void main(String[] args) {
 
-		Item camara = null;
+		Item camaraSony = new Item(354);
+		CamaraFotografica camaraSonyDetails = new CamaraFotografica("Sony","MDX",true);
+		
+		camaraSony.setCamara(camaraSonyDetails);
+		System.out.println(camaraSony.getCamara());
+		
 		Scanner sc = new Scanner(System.in);
 		
 		Tienda tienda = new Tienda(null, null, 0);
 		tienda.infoTienda();
-		
+		tienda.agregarlistaDeItems(camaraSony);
 		
 		int opcion = -1;
 		while (opcion != 0) {
@@ -22,9 +27,13 @@ public class AppPrincipal {
 			switch (opcion) {
 				
 			case 1: 
-				;
+				
+				
 				break;
 			case 2:
+				
+				tienda.verListaDeItems();
+				
 				;
 				break;
 			case 3:

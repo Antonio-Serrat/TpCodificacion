@@ -9,16 +9,21 @@ public class Item {
 	private Double costoAlquiler;
 	private Date fechaDevolucion = new Date();
 	private int historialAlquiler; //dias de alquiler de 1 a 30
-	public camaraFotografica camara;
+	public CamaraFotografica camara;
 	
+	
+	public Item(int codReferencia) {
+		super();
+		this.codReferencia = codReferencia;
+	}
 	
 
-	public camaraFotografica getCamara() {
-		return camara;
+	public String getCamara() {
+		return camara.getMarca();
 	}
 
-	public void setCamara(camaraFotografica camara) {
-		
+	public void setCamara(CamaraFotografica camara) {
+		this.camara = camara;
 		
 	}
 

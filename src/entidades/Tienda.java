@@ -1,6 +1,9 @@
 package entidades;
 
 import java.util.Date;
+import java.util.List;
+import java.util.Scanner;
+import java.util.ArrayList;
 
 
 
@@ -9,13 +12,43 @@ public class Tienda {
 	private String Duenio = "Jose Rutter";
 	private String Direccion = "3874 y 2663";
 	private int Telefono = 223457638;
-	
+	private List<Item> listaDeItems;
+	Scanner sc = new Scanner(System.in);
 	
 	public Tienda(String Duenio, String Direccion, int Telefono) {
 		this.Duenio = Duenio;
 		this.Direccion = Direccion;
-		this.Telefono = Telefono;	
+		this.Telefono = Telefono;
+		this.listaDeItems = new ArrayList<>();
 	}
+	
+	
+	
+	public void agregarlistaDeItems(Item item) {
+		this.listaDeItems.add(item);
+	}
+	
+	
+	public List<Item> getListaDeItems() {
+		return listaDeItems;
+	}
+	
+	public void verListaDeItems(){
+		System.out.println("las camaras disponibles son");
+		for (Item item : listaDeItems) {
+			System.out.println(item.getCodReferencia());			
+		}
+	}
+
+
+
+	public void setListaDeItems(List<Item> listaDeItems) {
+		this.listaDeItems = listaDeItems;
+	}
+
+
+
+	
 	public String infoTienda() {
 		return "El Dueño de la tienda es: "+Duenio +". Situada en: "+ Direccion + ".  Tlf:  "+Telefono;
 	}
