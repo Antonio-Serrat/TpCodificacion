@@ -31,22 +31,7 @@ public class AppPrincipal {
 			switch (opcion) {
 				
 			case 1: 
-				System.out.print("Ingrese el codigo de referencia ");
-				int codReferencia = sc.nextInt();
-				sc.nextLine();
-				
-				System.out.print("Ingrese la marca del producto ");
-				String marca = sc.nextLine();
-				
-				System.out.print("Ingrese el modelo del producto  ");
-				
-				String modelo = sc.nextLine();
-				
-				Item item = new Item (codReferencia);
-				CamaraFotografica itemDetails = new CamaraFotografica(marca,modelo);
-				
-				item.setCamara(itemDetails);
-				tienda.agregarlistaDeItems(item);
+				tienda.agregarCamara(tienda);
 				;
 				break;
 			case 2:
