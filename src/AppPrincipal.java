@@ -6,21 +6,21 @@ public class AppPrincipal {
 
 	public static void main(String[] args) {
 
-		Item camaraSony = new Item(354);
-		CamaraFotografica camaraSonyDetails = new CamaraFotografica("Sony","MDX",true);
+		//Item camaraSony = new Item(354);
+		//CamaraFotografica camaraSonyDetails = new CamaraFotografica("Sony","MDX",true);
 		
-		camaraSony.setCamara(camaraSonyDetails);
-		System.out.println(camaraSony.getCamara());
+		//camaraSony.setCamara(camaraSonyDetails);
+		//System.out.println(camaraSony.getCamara());
 		
 		Scanner sc = new Scanner(System.in);
 		
 		Tienda tienda = new Tienda(null, null, 0);
 		tienda.infoTienda();
-		tienda.agregarlistaDeItems(camaraSony);
+		//tienda.agregarlistaDeItems(camaraSony);
 		
-		Cliente pepe = new Cliente("pepe");
+		//Cliente pepe = new Cliente("pepe");
 		
-		tienda.alquilar(pepe, camaraSony);
+		//tienda.alquilar(pepe, camaraSony);
 		
 		int opcion = -1;
 		while (opcion != 0) {
@@ -31,27 +31,12 @@ public class AppPrincipal {
 			switch (opcion) {
 				
 			case 1: 
-				System.out.print("Ingrese el codigo de referencia ");
-				int codReferencia = sc.nextInt();
-				sc.nextLine();
-				
-				System.out.print("Ingrese la marca del producto ");
-				String marca = sc.nextLine();
-				
-				System.out.print("Ingrese el modelo del producto  ");
-				
-				String modelo = sc.nextLine();
-				
-				Item item = new Item (codReferencia);
-				CamaraFotografica itemDetails = new CamaraFotografica(marca,modelo);
-				
-				item.setCamara(itemDetails);
-				tienda.agregarlistaDeItems(item);
+				tienda.agregarCamara(tienda);
 				;
 				break;
 			case 2:
 				
-				tienda.verListaDeItems();
+				tienda.verCamarasDisponibles();
 				
 				;
 				break;
@@ -62,7 +47,7 @@ public class AppPrincipal {
 				String nombre = sc.nextLine();
 				Cliente nuevoCliente = new Cliente(nombre);
 				
-				tienda.verListaDeItems();
+				tienda.verCamarasDisponibles();
 				
 				System.out.println("ingrese el codigo de la camara que desee alquilar");
 				int codRef = sc.nextInt();
@@ -76,6 +61,14 @@ public class AppPrincipal {
 				;
 				break;
 			case 4:
+				tienda.verListaDeItems();
+				System.out.println("ingrese el codigo de la camara que desee cambiar el estado");
+				
+				int codRefe = sc.nextInt();			
+				sc.nextLine();
+				Item itemNuevou = new Item(codRefe);
+				
+				tienda.cambiarEstadoCamara(itemNuevou);
 				;
 				break;
 			case 5:

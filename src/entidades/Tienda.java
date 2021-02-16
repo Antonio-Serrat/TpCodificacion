@@ -39,15 +39,7 @@ public class Tienda {
 			}
 		}
 	} 
-		
-//		if(item.getEstado().equals("Disponible")) {
-//			item.setEstado("alquilada");
-//			System.out.println("has alquilado tu camara");
-//		}else {
-//			System.out.println("la camara ya se encuentra alquilada");
-//			}
-		
-		
+	
 	
 	public void agregarlistaDeItems(Item item) {
 		this.listaDeItems.add(item);
@@ -114,14 +106,42 @@ public class Tienda {
 	
 	
 	
-	public  void agregarCamara () {
+	public  void agregarCamara (Tienda tienda) {
+		System.out.print("Ingrese el codigo de referencia ");
+		int codReferencia = sc.nextInt();
+		sc.nextLine();
 		
+		System.out.print("Ingrese la marca del producto ");
+		String marca = sc.nextLine();
+		
+		System.out.print("Ingrese el modelo del producto  ");
+		
+		String modelo = sc.nextLine();
+		
+		Item item = new Item (codReferencia);
+		CamaraFotografica itemDetails = new CamaraFotografica(marca,modelo);
+		
+		item.setCamara(itemDetails);
+		tienda.agregarlistaDeItems(item);
 	}
 	
 	
 	
-	public  void cambiarEstadoCamara () {
-
+	public  void cambiarEstadoCamara (Item item) {
+		for (Item i : listaDeItems) {
+			if (i.getCodReferencia() == item.getCodReferencia()) {
+				if (i.getEstado().equals("Disponible")) {
+					i.setEstado("alquilado");
+					System.out.println("Estado cambiado a alquilado");
+				}else {
+					i.setEstado("Disponible");
+					System.out.println("Estado cambiado a disponible");
+				}
+				
+			}else {
+				//System.out.println("no hay ninguna camara con ese codigo");
+			}
+		}
 		
 	}
 	
@@ -129,8 +149,17 @@ public class Tienda {
 		
 	}
 	
-	public  void camarasDisponibles() {
-		
+	public  void verCamarasDisponibles() {
+		System.out.println("las camaras disponibles son: ");
+		for (Item item : listaDeItems) {
+			if(item.getEstado().equals("Disponible")) {
+				System.out.println("codigo de referencia: " 
+						+item.getCodReferencia()+" " 
+						+" marca: "
+						+ item.getCamara());	
+			}
+					
+		}
 	}	
 	
 	public  void camarasConRetraso() {
