@@ -5,7 +5,7 @@ import java.util.Date;
 public class Item {
 	
 	private int codReferencia;
-	private String estado;
+	private String estado = "Disponible";
 	private Double costoAlquiler;
 	private Date fechaDevolucion = new Date();
 	private int historialAlquiler; //dias de alquiler de 1 a 30
