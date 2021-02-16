@@ -7,6 +7,11 @@ public class AppPrincipal {
 	public static void main(String[] args) {
 
 		Item camaraSony = new Item(354);
+		CamaraFotografica camaraSonyDetails = new CamaraFotografica("Sony","MDX",true);
+		
+		camaraSony.setCamara(camaraSonyDetails);
+		System.out.println(camaraSony.getCamara());
+		
 		Scanner sc = new Scanner(System.in);
 		
 		Tienda tienda = new Tienda(null, null, 0);

@@ -1,9 +1,19 @@
 package entidades;
 
-public class camaraFotografica {
+public class CamaraFotografica {
 	private String marca;
 	private String modelo;
-	private boolean soporteFlash=true;
+	private boolean soporteFlash;
+	
+	
+	
+	public CamaraFotografica(String marca, String modelo, boolean soporteFlash) {
+		super();
+		this.marca = marca;
+		this.modelo = modelo;
+		this.soporteFlash = soporteFlash;
+	}
+	
 	public String getMarca() {
 		return marca;
 	}
