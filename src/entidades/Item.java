@@ -11,6 +11,17 @@ public class Item {
 	private int historialAlquiler; //dias de alquiler de 1 a 30
 	public camaraFotografica camara;
 	
+	
+
+	public camaraFotografica getCamara() {
+		return camara;
+	}
+
+	public void setCamara(camaraFotografica camara) {
+		
+		
+	}
+
 	public int getCodReferencia() {
 		return codReferencia;
 	}
