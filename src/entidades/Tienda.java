@@ -26,12 +26,16 @@ public class Tienda {
 		
 		for (Item i : listaDeItems) {
 			if (i.getCodReferencia() == item.getCodReferencia()) {
-				if (i.getEstado().equals("Disponible")) {
-					i.setEstado("alquilado");
+				Estado disponible = new Disponible();
+				Estado alquilado = new Alquilada();
+				
+				if (i.getEstado().getNombre().equals(disponible.getNombre())) {
+					
+					i.setEstado(alquilado);
 					System.out.println("la alquilaste");
 				}else {
-					i.setEstado("Disponible");
-					System.out.println("estaba alquilada ahora la cambiaste a disponible");
+					//i.setEstado("Disponible");
+					//System.out.println("estaba alquilada ahora la cambiaste a disponible");
 				}
 				
 			}else {
@@ -126,11 +130,44 @@ public class Tienda {
 	}
 	
 	
+	public void cambiarEstadoCamara(Tienda tienda) {
+		
+		
+		//mostrar el listado de camaras
+		tienda.verListaDeItems();
+		// ingresa codigo de referencia al cual quieres cambiar de estado
+		System.out.println("ingresa codigo de referencia al cual quieres cambiar de estado");
+		int codReferencia = sc.nextInt();
+		Item nuevoItem = new Item(codReferencia);
+		sc.nextLine();
+		
+		//-- case 1
+		for (Item i : listaDeItems) {
+			if (i.getCodReferencia() == nuevoItem.getCodReferencia() ) {
+				Estado alquilada = new Alquilada();
+				i.setEstado(alquilada);
+			}
+		}
+		//----
+		
+		//menu con cuatro opciones
+		// 1 cambiarEstadoAAlquilada
+		// item.setEstado(Alquilada alquilada)
+		// 2 cambiarEstadoConRetraso
+		// item.setEstado(ConRetraso conRetraso)
+		// 3 cambiarEstadoEnReparacion
+		// item.setEstado(EnReparacion enReparacion)
+		// 4 cambiarEstadoDisponible
+		// item.setEstado(Disponible disponible)	
+		
+	}
+
 	
-	public  void cambiarEstadoCamara (Item item) {
+	
+/*	public  void cambiarEstadoCamara (Item item) {
 		for (Item i : listaDeItems) {
 			if (i.getCodReferencia() == item.getCodReferencia()) {
-				if (i.getEstado().equals("Disponible")) {
+				if (i.getEstado().getNombre().equals("Disponible")) {
 					i.setEstado("alquilado");
 					System.out.println("Estado cambiado a alquilado");
 				}else {
@@ -144,7 +181,7 @@ public class Tienda {
 		}
 		
 	}
-	
+	*/
 	public  void penalizar () {
 		
 	}
@@ -152,7 +189,11 @@ public class Tienda {
 	public  void verCamarasDisponibles() {
 		System.out.println("las camaras disponibles son: ");
 		for (Item item : listaDeItems) {
-			if(item.getEstado().equals("Disponible")) {
+			
+			Estado disponible = new Disponible();
+					
+			
+			if(item.getEstado().getNombre().equals(disponible.getNombre())) {
 				System.out.println("codigo de referencia: " 
 						+item.getCodReferencia()+" " 
 						+" marca: "
