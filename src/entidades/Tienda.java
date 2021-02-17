@@ -22,29 +22,6 @@ public class Tienda {
 		this.listaDeItems = new ArrayList<>();
 	}
 	
-	public void alquilar(Cliente cliente, Item item) {	
-		
-		for (Item i : listaDeItems) {
-			if (i.getCodReferencia() == item.getCodReferencia()) {
-				Estado disponible = new Disponible();
-				Estado alquilado = new Alquilada();
-				
-				if (i.getEstado().getNombre().equals(disponible.getNombre())) {
-					
-					i.setEstado(alquilado);
-					System.out.println("la alquilaste");
-				}else {
-					//i.setEstado("Disponible");
-					//System.out.println("estaba alquilada ahora la cambiaste a disponible");
-				}
-				
-			}else {
-				//System.out.println("no hay ninguna camara con ese codigo");
-			}
-		}
-	} 
-	
-	
 	public void agregarlistaDeItems(Item item) {
 		this.listaDeItems.add(item);
 	}
@@ -54,27 +31,22 @@ public class Tienda {
 		return listaDeItems;
 	}
 	
-	public void verListaDeItems(){
-		System.out.println("las camaras disponibles son: ");
-		for (Item item : listaDeItems) {
-			System.out.println("codigo de referencia: " 
-								+item.getCodReferencia()+" " 
-								+" marca: "
-								+ item.getCamara());			
-		}
-	}
-
-
-
-	public void setListaDeItems(List<Item> listaDeItems) {
-		this.listaDeItems = listaDeItems;
-	}
 
 
 
 	
 	public String infoTienda() {
 		return "El Dueño de la tienda es: "+Duenio +". Situada en: "+ Direccion + ".  Tlf:  "+Telefono;
+	}
+	
+	public String getDuenio() {
+		return Duenio;
+	}
+	public String getDireccion() {
+		return Direccion;
+	}
+	public int getTelefono() {
+		return Telefono;
 	}
 	
 	
@@ -95,21 +67,6 @@ public class Tienda {
 		System.out.println("-Ingrese 0 para abandonar de la tienda");
 	}
 	
-	
-	
-	
-	public String getDuenio() {
-		return Duenio;
-	}
-	public String getDireccion() {
-		return Direccion;
-	}
-	public int getTelefono() {
-		return Telefono;
-	}
-	
-	
-	
 	public  void agregarCamara (Tienda tienda) {
 		System.out.print("Ingrese el codigo de referencia ");
 		int codReferencia = sc.nextInt();
@@ -124,10 +81,70 @@ public class Tienda {
 		
 		Item item = new Item (codReferencia);
 		CamaraFotografica itemDetails = new CamaraFotografica(marca,modelo);
+		Disponible disponible = new Disponible();
 		
+		item.setEstado(disponible);
 		item.setCamara(itemDetails);
 		tienda.agregarlistaDeItems(item);
 	}
+	
+	public  void verCamarasDisponibles() {
+		System.out.println("las camaras disponibles son: ");
+		Estado disponible = new Disponible();
+		
+		for (Item item : listaDeItems) {
+			
+			if(item.getEstado().equals(disponible.getNombre())) {
+				System.out.println("codigo de referencia: " 
+						+item.getCodReferencia()+" " 
+						+" marca: "
+						+ item.getCamara());	
+			}
+			
+		}
+	}	
+	public void alquilar(Cliente cliente, Item item) {	
+		
+		for (Item i : listaDeItems) {
+			if (i.getCodReferencia() == item.getCodReferencia()) {
+				Estado disponible = new Disponible();
+				Estado alquilado = new Alquilada();
+				
+				if (i.getEstado().equals(disponible.getNombre())) {
+					
+					i.setEstado(alquilado);
+					System.out.println("la alquilaste");
+				}else {
+					//i.setEstado("Disponible");
+					//System.out.println("estaba alquilada ahora la cambiaste a disponible");
+				}
+				
+			}else {
+				//System.out.println("no hay ninguna camara con ese codigo");
+			}
+		}
+	} 
+	
+	public void verListaDeItems(){
+		System.out.println("las camaras disponibles son: ");
+		for (Item item : listaDeItems) {
+			System.out.println("codigo de referencia: " 
+					+item.getCodReferencia()+" " 
+					+" marca: "
+					+ item.getCamara());			
+		}
+	}
+	
+	
+	
+	public void setListaDeItems(List<Item> listaDeItems) {
+		this.listaDeItems = listaDeItems;
+	}
+	
+	
+	
+	
+	
 	
 	
 	public void cambiarEstadoCamara(Tienda tienda) {
@@ -186,22 +203,6 @@ public class Tienda {
 		
 	}
 	
-	public  void verCamarasDisponibles() {
-		System.out.println("las camaras disponibles son: ");
-		for (Item item : listaDeItems) {
-			
-			Estado disponible = new Disponible();
-					
-			
-			if(item.getEstado().getNombre().equals(disponible.getNombre())) {
-				System.out.println("codigo de referencia: " 
-						+item.getCodReferencia()+" " 
-						+" marca: "
-						+ item.getCamara());	
-			}
-					
-		}
-	}	
 	
 	public  void camarasConRetraso() {
 		
