@@ -5,7 +5,8 @@ import java.util.Date;
 public class Item {
 	
 	private int codReferencia;
-	private String estado = "Disponible";
+	//private String estado = "Disponible";
+	private Estado estado ;
 	private Double costoAlquiler;
 	private Date fechaDevolucion = new Date();
 	private int historialAlquiler; //dias de alquiler de 1 a 30
@@ -15,6 +16,7 @@ public class Item {
 	public Item(int codReferencia) {
 		super();
 		this.codReferencia = codReferencia;
+		this.estado = estado;
 	}
 	
 	public String getCamara() {
@@ -24,14 +26,23 @@ public class Item {
 	public void setCamara(CamaraFotografica camara) {
 		this.camara = camara;
 	}
+	
+
+	public Estado getEstado() {
+		return estado;
+	}
+
+	public void setEstado(Estado estado) {
+		this.estado = estado;
+	}
 
 	public int getCodReferencia() {
 		return codReferencia;
 	}
 
-	public String getEstado() {
-		return estado;
-	}
+	//public String getEstado() {
+	//	return estado;
+	//}
 
 	public Double getCostoAlquiler() {
 		return costoAlquiler;
@@ -49,9 +60,9 @@ public class Item {
 		this.codReferencia = codReferencia;
 	}
 
-	public void setEstado(String estado) {
+	/*public void setEstado(String estado) {
 		this.estado = estado;
-	}
+	}*/
 
 	public void setCostoAlquiler(Double costoAlquiler) {
 		this.costoAlquiler = costoAlquiler;

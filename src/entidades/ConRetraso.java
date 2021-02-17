@@ -3,7 +3,7 @@ package entidades;
 public class ConRetraso extends Estado {
 	
     public ConRetraso () {
-    	this.nombre= "Pagado";
+    	this.nombre= "con retraso";
     }
     
 	public Estado getEstadoSiguiente() {
