@@ -3,7 +3,7 @@ package entidades;
 import java.util.Date;
 
 public abstract class Estado {
-	protected String nombre;
+	protected String nombre ;
 	private Date fecha = new Date();
 	
 	public abstract Estado getEstadoSiguiente();

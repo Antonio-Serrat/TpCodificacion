@@ -30,8 +30,8 @@ public class Item {
 	}
 	
 
-	public Estado getEstado() {
-		return estado;
+	public String getEstado() {
+		return estado.getNombre();
 	}
 
 	public void setEstado(Estado estado) {
