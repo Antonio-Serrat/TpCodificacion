@@ -129,6 +129,15 @@ public class Tienda {
 		tienda.agregarlistaDeItems(item);
 	}
 	
+	public void menuDeEstados() {
+		
+		System.out.println("-Ingrese 1 para cambiar a estado de 'Alquilada' ");
+		System.out.println("-Ingrese 2 para cambiar a estado de 'con retraso' ");
+		System.out.println("-Ingrese 3 para cambiar a estado de'en reparacion'");
+		System.out.println("-Ingrese 4 para cambiar a estado de 'disponible' ");
+		System.out.println("-Ingrese 0 para salir de este menu");
+	}
+	
 	
 	public void cambiarEstadoCamara(Tienda tienda) {
 		
@@ -142,12 +151,55 @@ public class Tienda {
 		sc.nextLine();
 		
 		//-- case 1
-		for (Item i : listaDeItems) {
-			if (i.getCodReferencia() == nuevoItem.getCodReferencia() ) {
-				Estado alquilada = new Alquilada();
-				i.setEstado(alquilada);
+		
+		Scanner sc = new Scanner(System.in);
+		int opcion = -1;
+		while (opcion != 0) {
+			menuDeEstados();
+		opcion = sc.nextInt();
+		sc.nextLine();
+		
+			switch (opcion) {
+				
+			case 1: 
+				for (Item i : listaDeItems) {
+					if (i.getCodReferencia() == nuevoItem.getCodReferencia() ) {
+						Estado alquilada = new Alquilada();
+						i.setEstado(alquilada);
+					}
+				}
+				break;
+				
+			case 2:
+				for (Item i : listaDeItems) {
+					if (i.getCodReferencia() == nuevoItem.getCodReferencia() ) {
+						Estado conRetraso = new ConRetraso();
+						i.setEstado(conRetraso);
+					}
+				}	
+				break;
+				
+			case 3:
+				for (Item i : listaDeItems) {
+					if (i.getCodReferencia() == nuevoItem.getCodReferencia() ) {
+						Estado enReparacion = new EnReparacion();
+						i.setEstado(enReparacion);
+					}
+				}	
+				
+				;
+				break;
+			case 4:
+				for (Item i : listaDeItems) {
+					if (i.getCodReferencia() == nuevoItem.getCodReferencia() ) {
+						Estado disponible = new Disponible();
+						i.setEstado(disponible);
+					}
+				}	
+				break;
 			}
 		}
+		
 		//----
 		
 		//menu con cuatro opciones
