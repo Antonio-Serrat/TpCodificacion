@@ -10,11 +10,6 @@ public class AppPrincipal {
 		
 		Tienda tienda = new Tienda(null, null, 0);
 		tienda.infoTienda();
-		//tienda.agregarlistaDeItems(camaraSony);
-		
-		//Cliente pepe = new Cliente("pepe");
-		
-		//tienda.alquilar(pepe, camaraSony);
 		
 		int opcion = -1;
 		while (opcion != 0) {
@@ -51,21 +46,13 @@ public class AppPrincipal {
 				
 				
 				tienda.alquilar(nuevoCliente, itemNuevo);
-				;
+				
 				break;
 			case 4:
-				
+	
 				tienda.cambiarEstadoCamara(tienda);
+				tienda.verListaDeItems();
 				
-				/*tienda.verListaDeItems();
-				System.out.println("ingrese el codigo de la camara que desee cambiar el estado");
-				
-				int codRefe = sc.nextInt();			
-				sc.nextLine();
-				Item itemNuevou = new Item(codRefe);
-				
-				//tienda.cambiarEstadoCamara(itemNuevou);
-				;*/
 				break;
 			case 5:
 				;
