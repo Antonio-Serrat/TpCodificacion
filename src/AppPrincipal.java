@@ -32,14 +32,13 @@ public class AppPrincipal {
 				
 			case 1: 
 				tienda.agregarCamara(tienda);
-				;
 				break;
+				
 			case 2:
 				
 				tienda.verCamarasDisponibles();
-				
-				;
 				break;
+				
 			case 3:
 				
 				System.out.print("Ingrese su nombre  ");
@@ -61,6 +60,9 @@ public class AppPrincipal {
 				;
 				break;
 			case 4:
+				
+				tienda.cambiarEstadoCamara(tienda);
+				
 				tienda.verListaDeItems();
 				System.out.println("ingrese el codigo de la camara que desee cambiar el estado");
 				
@@ -68,7 +70,7 @@ public class AppPrincipal {
 				sc.nextLine();
 				Item itemNuevou = new Item(codRefe);
 				
-				tienda.cambiarEstadoCamara(itemNuevou);
+				//tienda.cambiarEstadoCamara(itemNuevou);
 				;
 				break;
 			case 5:
