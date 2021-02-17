@@ -29,7 +29,6 @@ public class Item {
 		
 	}
 	
-
 	public String getEstado() {
 		return estado.getNombre();
 	}
