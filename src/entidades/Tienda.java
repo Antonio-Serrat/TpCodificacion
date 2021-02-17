@@ -31,9 +31,6 @@ public class Tienda {
 		return listaDeItems;
 	}
 	
-
-
-
 	
 	public String infoTienda() {
 		return "El Dueño de la tienda es: "+Duenio +". Situada en: "+ Direccion + ".  Tlf:  "+Telefono;
@@ -91,7 +88,7 @@ public class Tienda {
 	public  void verCamarasDisponibles() {
 		System.out.println("las camaras disponibles son: ");
 		Estado disponible = new Disponible();
-		
+
 		for (Item item : listaDeItems) {
 			
 			if(item.getEstado().equals(disponible.getNombre())) {
@@ -100,9 +97,11 @@ public class Tienda {
 						 item.getCamara());		
 				System.out.println(" ");	
 			}
+			}
 			
 		}
-	}	
+		
+	
 	public void alquilar(Cliente cliente, Item item) {	
 		
 		for (Item i : listaDeItems) {
@@ -120,7 +119,7 @@ public class Tienda {
 	} 
 	
 	public void verListaDeItems(){
-		System.out.println("las camaras disponibles son: ");
+		System.out.println("el estado de las camaras es: ");
 		for (Item item : listaDeItems) {
 			System.out.printf("Cod Producto: %s.................Nombre: %s .............Estado: %s..........",
 					item.getCodReferencia(),
@@ -130,18 +129,10 @@ public class Tienda {
 		}
 	}
 	
-	
-	
 	public void setListaDeItems(List<Item> listaDeItems) {
 		this.listaDeItems = listaDeItems;
 	}
-	
-	
-	
-	
-	
-	
-	
+
 	public void cambiarEstadoCamara(Tienda tienda) {
 		
 		
@@ -210,13 +201,37 @@ public class Tienda {
 	}
 	
 	
-	public  void camarasConRetraso() {
+	public  void verCamarasConRetraso() {
+		System.out.println("las camaras con retraso son: ");
+		Estado conRetraso = new ConRetraso();
 		
+		for (Item item : listaDeItems) {
+			
+			if(item.getEstado().equals(conRetraso.getNombre())) {
+				System.out.printf("Cod Producto: %s.................Nombre: %s ........",
+						item.getCodReferencia(),
+						 item.getCamara());		
+				System.out.println(" ");	
+			}
+			
+		}
 	}	
 	
-	public  void camarasEnReparacion() {
+	public  void verCamarasEnReparacion() {
+		System.out.println("las camaras en reparacion son: ");
+		Estado enReparacion = new EnReparacion();
 		
-	}
+		for (Item item : listaDeItems) {
+			
+			if(item.getEstado().equals(enReparacion.getNombre())) {
+				System.out.printf("Cod Producto: %s.................Nombre: %s ........",
+						item.getCodReferencia(),
+						 item.getCamara());		
+				System.out.println(" ");	
+			}
+			
+		}
+	}	
 	
 	public  void repararCamara() {
 		
