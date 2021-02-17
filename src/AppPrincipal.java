@@ -5,13 +5,7 @@ import entidades.*;
 public class AppPrincipal {
 
 	public static void main(String[] args) {
-
-		//Item camaraSony = new Item(354);
-		//CamaraFotografica camaraSonyDetails = new CamaraFotografica("Sony","MDX",true);
-		
-		//camaraSony.setCamara(camaraSonyDetails);
-		//System.out.println(camaraSony.getCamara());
-		
+	
 		Scanner sc = new Scanner(System.in);
 		
 		Tienda tienda = new Tienda(null, null, 0);
@@ -63,7 +57,7 @@ public class AppPrincipal {
 				
 				tienda.cambiarEstadoCamara(tienda);
 				
-				tienda.verListaDeItems();
+				/*tienda.verListaDeItems();
 				System.out.println("ingrese el codigo de la camara que desee cambiar el estado");
 				
 				int codRefe = sc.nextInt();			
@@ -71,7 +65,7 @@ public class AppPrincipal {
 				Item itemNuevou = new Item(codRefe);
 				
 				//tienda.cambiarEstadoCamara(itemNuevou);
-				;
+				;*/
 				break;
 			case 5:
 				;
