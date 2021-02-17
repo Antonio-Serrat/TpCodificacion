@@ -55,13 +55,16 @@ public class AppPrincipal {
 				
 				break;
 			case 5:
-				;
 				break;
 			case 6:
-				;
+				tienda.verCamarasConRetraso();
+				
 				break;
 			case 7:
-				;
+				tienda.verCamarasEnReparacion();
+				break;
+			case 8:
+				
 				break;
 			}
 		}
