@@ -22,16 +22,6 @@ public class Tienda {
 		this.listaDeItems = new ArrayList<>();
 	}
 	
-	public void agregarlistaDeItems(Item item) {
-		this.listaDeItems.add(item);
-	}
-	
-	
-	public List<Item> getListaDeItems() {
-		return listaDeItems;
-	}
-	
-	
 	public String infoTienda() {
 		return "El Dueño de la tienda es: "+Duenio +". Situada en: "+ Direccion + ".  Tlf:  "+Telefono;
 	}
@@ -63,6 +53,16 @@ public class Tienda {
 		System.out.println("-Ingrese 8 para enviar una camara a reparacion ");
 		System.out.println("-Ingrese 0 para abandonar de la tienda");
 	}
+	
+	public void agregarlistaDeItems(Item item) {
+		this.listaDeItems.add(item);
+	}
+	
+	
+	public List<Item> getListaDeItems() {
+		return listaDeItems;
+	}
+	
 	
 	public  void agregarCamara (Tienda tienda) {
 		System.out.print("Ingrese el codigo de referencia ");
@@ -101,9 +101,26 @@ public class Tienda {
 			
 		}
 		
+	public void datosAlquiler() {
+		
+		System.out.print("Ingrese su nombre  ");
+		
+		String nombre = sc.nextLine();
+		Cliente nuevoCliente = new Cliente(nombre);
+		
+		this.verCamarasDisponibles();
+		
+		System.out.println("ingrese el codigo de la camara que desee alquilar");
+		int codRef = sc.nextInt();
+		
+		sc.nextLine();
+		Item itemNuevo = new Item(codRef);
+		
+		this.alquilar(nuevoCliente, itemNuevo);
+	}
 	
 	public void alquilar(Cliente cliente, Item item) {	
-		
+				
 		for (Item i : listaDeItems) {
 			if (i.getCodReferencia() == item.getCodReferencia()) {
 				Estado disponible = new Disponible();
@@ -121,6 +138,7 @@ public class Tienda {
 	public void verListaDeItems(){
 		System.out.println("el estado de las camaras es: ");
 		for (Item item : listaDeItems) {
+			 
 			System.out.printf("Cod Producto: %s.................Nombre: %s .............Estado: %s..........",
 					item.getCodReferencia(),
 					item.getCamara(),	
