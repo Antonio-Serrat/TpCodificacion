@@ -29,23 +29,8 @@ public class AppPrincipal {
 				break;
 				
 			case 3:
-				
-				System.out.print("Ingrese su nombre  ");
-				
-				String nombre = sc.nextLine();
-				Cliente nuevoCliente = new Cliente(nombre);
-				
-				tienda.verCamarasDisponibles();
-				
-				System.out.println("ingrese el codigo de la camara que desee alquilar");
-				int codRef = sc.nextInt();
-				
-				
-				sc.nextLine();
-				Item itemNuevo = new Item(codRef);
-				
-				
-				tienda.alquilar(nuevoCliente, itemNuevo);
+
+				tienda.datosAlquiler();
 				
 				break;
 			case 4:
@@ -55,6 +40,7 @@ public class AppPrincipal {
 				
 				break;
 			case 5:
+				
 				break;
 			case 6:
 				tienda.verCamarasConRetraso();
