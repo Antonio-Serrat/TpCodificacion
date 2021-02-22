@@ -87,7 +87,7 @@ public class Tienda {
 	
 	public  void verCamarasDisponibles() {
 		if (listaDeItems.isEmpty()) {
-			System.out.println("no hay camaras Disponibles porque estan alquiladas o no tenemos en nuestro local");
+			System.out.println("no hay camaras Disponibles porque no hay ninguna cargada al local");
 		}else {
 			System.out.println("las camaras disponibles son: ");
 			Estado disponible = new Disponible();
@@ -135,7 +135,11 @@ public class Tienda {
 				if (i.getEstado().equals(disponible.getNombre())) {
 					
 					i.setEstado(alquilado);
-					System.out.println("La camara se encuentra alquilada");
+					cliente.agregarCamarasAlquiladas(item);
+					
+					System.out.println("Has alquilado la camara");
+				}else {
+					System.out.println("la camara esta alquilada o se encuentra en reparación");
 				}
 			}
 		}
