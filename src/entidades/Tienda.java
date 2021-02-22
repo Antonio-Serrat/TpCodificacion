@@ -86,18 +86,24 @@ public class Tienda {
 	}
 	
 	public  void verCamarasDisponibles() {
-		System.out.println("las camaras disponibles son: ");
-		Estado disponible = new Disponible();
+		if (listaDeItems.isEmpty()) {
+			System.out.println("no hay camaras Disponibles porque estan alquiladas o no tenemos en nuestro local");
+		}else {
+			System.out.println("las camaras disponibles son: ");
+			Estado disponible = new Disponible();
 
-		for (Item item : listaDeItems) {
-			
-			if(item.getEstado().equals(disponible.getNombre())) {
-				System.out.printf("Cod Producto: %s.................Nombre: %s ........",
-						item.getCodReferencia(),
-						 item.getCamara());		
-				System.out.println(" ");	
+			for (Item item : listaDeItems) {
+				
+				if(item.getEstado().equals(disponible.getNombre())) {
+					System.out.printf("Cod Producto: %s.................Nombre: %s ........",
+							item.getCodReferencia(),
+							 item.getCamara());		
+					System.out.println(" ");	
+				}
 			}
-			}
+		}
+		
+		
 			
 		}
 		
@@ -136,15 +142,22 @@ public class Tienda {
 	} 
 	
 	public void verListaDeItems(){
-		System.out.println("el estado de las camaras es: ");
-		for (Item item : listaDeItems) {
-			 
-			System.out.printf("Cod Producto: %s.................Nombre: %s .............Estado: %s..........",
-					item.getCodReferencia(),
-					item.getCamara(),	
-					item.getEstado());
-			System.out.println(" ");
+		
+		if (listaDeItems.isEmpty()) {
+			System.out.println("no hay camaras ,debes agregar alguna");
+		}else {
+			System.out.println("el estado de las camaras es: ");
+			for (Item item : listaDeItems) {
+				 
+				System.out.printf("Cod Producto: %s.................Nombre: %s .............Estado: %s..........",
+						item.getCodReferencia(),
+						item.getCamara(),	
+						item.getEstado());
+				System.out.println(" ");
+			}
 		}
+		
+		
 	}
 	
 	public void setListaDeItems(List<Item> listaDeItems) {
@@ -220,35 +233,49 @@ public class Tienda {
 	
 	
 	public  void verCamarasConRetraso() {
-		System.out.println("las camaras con retraso son: ");
+		
 		Estado conRetraso = new ConRetraso();
 		
-		for (Item item : listaDeItems) {
-			
-			if(item.getEstado().equals(conRetraso.getNombre())) {
-				System.out.printf("Cod Producto: %s.................Nombre: %s ........",
-						item.getCodReferencia(),
-						 item.getCamara());		
-				System.out.println(" ");	
+		if (listaDeItems.isEmpty()) {
+			System.out.println("no hay camaras con retraso");
+		}else {
+			System.out.println("las camaras con retraso son: ");
+			for (Item item : listaDeItems) {
+				
+				if(item.getEstado().equals(conRetraso.getNombre())) {
+					System.out.printf("Cod Producto: %s.................Nombre: %s ........",
+							item.getCodReferencia(),
+							 item.getCamara());		
+					System.out.println(" ");	
+				}
+				
 			}
-			
 		}
+		
+		
 	}	
 	
 	public  void verCamarasEnReparacion() {
-		System.out.println("las camaras en reparacion son: ");
+		
 		Estado enReparacion = new EnReparacion();
 		
-		for (Item item : listaDeItems) {
-			
-			if(item.getEstado().equals(enReparacion.getNombre())) {
-				System.out.printf("Cod Producto: %s.................Nombre: %s ........",
-						item.getCodReferencia(),
-						 item.getCamara());		
-				System.out.println(" ");	
+		if (listaDeItems.isEmpty()) {
+			System.out.println("no hay camaras en reparacion");
+		}else {
+			System.out.println("las camaras en reparacion son: ");
+			for (Item item : listaDeItems) {
+				
+				if(item.getEstado().equals(enReparacion.getNombre())) {
+					System.out.printf("Cod Producto: %s.................Nombre: %s ........",
+							item.getCodReferencia(),
+							 item.getCamara());		
+					System.out.println(" ");	
+				}
+				
 			}
-			
 		}
+		
+		
 	}	
 	
 	public  void repararCamara() {
