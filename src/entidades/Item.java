@@ -5,7 +5,6 @@ import java.util.Date;
 public class Item {
 	
 	private int codReferencia;
-	//private String estado = "Disponible";
 	private Estado estado = new Disponible() ;
 	private Double costoAlquiler;
 	private Date fechaDevolucion = new Date();
@@ -40,9 +39,7 @@ public class Item {
 		return codReferencia;
 	}
 
-	//public String getEstado() {
-	//	return estado;
-	//}
+	
 
 	public Double getCostoAlquiler() {
 		return costoAlquiler;
@@ -60,9 +57,7 @@ public class Item {
 		this.codReferencia = codReferencia;
 	}
 
-	/*public void setEstado(String estado) {
-		this.estado = estado;
-	}*/
+
 
 	public void setCostoAlquiler(Double costoAlquiler) {
 		this.costoAlquiler = costoAlquiler;
@@ -79,6 +74,9 @@ public class Item {
 	public void cambiarEstado (Estado estado) {
 		estado.getEstadoSiguiente();
 	}
-		
+	
+	
+	
+	
 	}
 

@@ -26,4 +26,8 @@ public abstract class Estado {
 			 this.fecha = fecha;
 		}
 
+		@Override
+		public String toString() {
+			return this.getNombre();
+		}
 }

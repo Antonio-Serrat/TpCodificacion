@@ -63,14 +63,6 @@ public class AppPrincipal {
 				
 				tienda.cambiarEstadoCamara(tienda);
 				
-			/*	tienda.verListaDeItems();
-				System.out.println("ingrese el codigo de la camara que desee cambiar el estado");
-				
-				int codRefe = sc.nextInt();			
-				sc.nextLine();
-				Item itemNuevou = new Item(codRefe);*/
-				
-				//tienda.cambiarEstadoCamara(itemNuevou);
 				;
 				break;
 			case 5:

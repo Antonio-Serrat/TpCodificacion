@@ -60,7 +60,8 @@ public class Tienda {
 			System.out.println("codigo de referencia: " 
 								+item.getCodReferencia()+" " 
 								+" marca: "
-								+ item.getCamara());			
+								+ item.getCamara()+ ""
+								+ "estado: "+ item.getEstado());			
 		}
 	}
 
@@ -249,7 +250,9 @@ public class Tienda {
 				System.out.println("codigo de referencia: " 
 						+item.getCodReferencia()+" " 
 						+" marca: "
-						+ item.getCamara());	
+						+ item.getCamara()+ " "
+						+ " estado "+" "
+						+ item.getEstado());	
 			}
 					
 		}
