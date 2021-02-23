@@ -19,6 +19,10 @@ public class ServicioTecnico {
 		this.camarasEnServicioTecnico.add(item);
 	}
 	
+	public void quitarCamarasEnReparacion(Item item) {
+		this.camarasEnServicioTecnico.remove(item);
+	}
+	
 	public String getNombre() {
 		return nombre;
 	}

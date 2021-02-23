@@ -47,7 +47,7 @@ public class AppPrincipal {
 				
 				break;
 			case 7:
-				
+				tienda.recuperarCamaraEnReparacion();
 				break;
 			case 8:
 				tienda.repararCamara();

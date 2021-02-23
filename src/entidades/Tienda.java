@@ -145,7 +145,7 @@ public class Tienda {
 					
 					System.out.println("Has alquilado la camara");
 				}else {
-					System.out.println("la camara esta alquilada o se encuentra en reparación");
+					System.out.println("la camara esta alquilada o se encuentra en reparaciï¿½n");
 				}
 			}
 		}
@@ -156,7 +156,7 @@ public class Tienda {
 		if (listaDeItems.isEmpty()) {
 			System.out.println("no hay camaras ,debes agregar alguna");
 		}else {
-			System.out.println("el estado de las camaras es: ");
+			//System.out.println("el estado de las camaras es: ");
 			for (Item item : listaDeItems) {
 				 
 				System.out.printf("Cod Producto: %s.................Nombre: %s .............Estado: %s..........",
@@ -176,6 +176,9 @@ public class Tienda {
 
 	public void cambiarEstadoCamara(Tienda tienda) {
 		
+		if (listaDeItems.isEmpty()) {
+			
+		}else {
 		
 		//mostrar el listado de camaras
 		tienda.verListaDeItems();
@@ -224,6 +227,7 @@ public class Tienda {
 				default:
 					break;
 				}	
+		}
 	}
 		//----
 		
@@ -290,11 +294,11 @@ public class Tienda {
 	
 	
 	public void enviarAServicioTecnico(ServicioTecnico ST, Item item) {	
+		Estado disponible = new Disponible();
+		Estado enReparacion = new EnReparacion();
 		
 		for (Item i : listaDeItems) {
 			if (i.getCodReferencia() == item.getCodReferencia()) {
-				Estado disponible = new Disponible();
-				Estado enReparacion = new EnReparacion();
 				
 				if (i.getEstado().equals(disponible.getNombre())) {
 					
@@ -331,12 +335,27 @@ public class Tienda {
 	}
 	
 	public void recuperarCamaraEnReparacion(){
-		//mostrar un listado de camaras con el estado : EN REPARACION                     
-		//ingrese el numero de referencia de la camara que desees enviar a reparar			
-				//Cambiar estado a, disponible)
-				//quitar( ServicioTecnico.remove(Item))
 		
-		System.out.println("recuperada");
+		Estado disponible = new Disponible();
+		Estado enReparacion = new EnReparacion();
+		ServicioTecnico ST = new ServicioTecnico(null);
+		
+		verCamarasEnReparacion();
+		//mostrar un listado de camaras con el estado : EN REPARACION                     
+		System.out.println("Ingrese el cÃ³digo de la camara que ya ha sido reparada");
+		//ingrese el numero de referencia de la camara que ya ha sido reparada.
+		int codRef = sc.nextInt();
+		Item itemRecuperado = new Item(codRef);
+		for(Item i : listaDeItems)
+			if(i.getEstado().equals(enReparacion.getNombre())) {
+				//Cambiar estado a, disponible)
+				i.setEstado(disponible);
+				//quitar( ServicioTecnico.remove(Item))
+				ST.quitarCamarasEnReparacion(itemRecuperado);
+				
+			}
+		
+		System.out.println("Su camara fue devuelta exitosamente.");
 	}
 	
 	
