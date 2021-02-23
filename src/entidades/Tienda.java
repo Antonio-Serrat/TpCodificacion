@@ -121,8 +121,13 @@ public class Tienda {
 		
 		sc.nextLine();
 		Item itemNuevo = new Item(codRef);
-		
+		//si el usuario alquilo una camara, no ejecutes el siguiente codigo.
+		//if (!listaDeItems.isEmpty())
+		// si el listado del cliente no es null entonces no entra al metodo alquilar
+		//
 		this.alquilar(nuevoCliente, itemNuevo);
+		// syso uds ya tiene una camara alquilada, no puede alquilar otra.El maximo de alquiler es uno.
+		
 	}
 	
 	public void alquilar(Cliente cliente, Item item) {	
@@ -135,6 +140,7 @@ public class Tienda {
 				if (i.getEstado().equals(disponible.getNombre())) {
 					
 					i.setEstado(alquilado);
+					
 					cliente.agregarCamarasAlquiladas(item);
 					
 					System.out.println("Has alquilado la camara");
@@ -282,8 +288,55 @@ public class Tienda {
 		
 	}	
 	
-	public  void repararCamara() {
+	
+	public void enviarAServicioTecnico(ServicioTecnico ST, Item item) {	
 		
+		for (Item i : listaDeItems) {
+			if (i.getCodReferencia() == item.getCodReferencia()) {
+				Estado disponible = new Disponible();
+				Estado enReparacion = new EnReparacion();
+				
+				if (i.getEstado().equals(disponible.getNombre())) {
+					
+					i.setEstado(enReparacion);
+					
+					ST.agregarCamarasEnReparacion(item);
+					
+					System.out.println("Has enviado una camara a servicio tecnico: " + ST.getNombre());
+				}
+			}
+		}
+	} 
+
+	
+	public  void repararCamara() {
+		//mostrar un listado de camaras con el estado : EN REPARACION                              checked!!!
+		verListaDeItems();
+		//ingrese el numero de referencia de la camara que desees enviar a reparar
+		
+		System.out.println("ingrese el codigo de la camara que desee enviar a reparar");
+		int codRef = sc.nextInt();
+		sc.nextLine();
+		Item itemNuevo = new Item(codRef);
+		//mostrar un listado de servicios tecnicos que acepten esa marca de camara(servicio tecnico marca == camaraFotografica marca;)
+		ServicioTecnico servicioTecnicoSamsung = new ServicioTecnico("servicioTecnicoSamsung");
+		System.out.println("1 " + servicioTecnicoSamsung.getNombre());
+		
+		
+		// enviar camara a servicio tecnico () . Cambiar estado a, "la camara se esta reparando en: servicioTecnicoSamsung.name")
+				//										agregar( ServicioTecnico.add(Item))
+		
+		enviarAServicioTecnico(servicioTecnicoSamsung, itemNuevo);		
+		
+	}
+	
+	public void recuperarCamaraEnReparacion(){
+		//mostrar un listado de camaras con el estado : EN REPARACION                     
+		//ingrese el numero de referencia de la camara que desees enviar a reparar			
+				//Cambiar estado a, disponible)
+				//quitar( ServicioTecnico.remove(Item))
+		
+		System.out.println("recuperada");
 	}
 	
 	
