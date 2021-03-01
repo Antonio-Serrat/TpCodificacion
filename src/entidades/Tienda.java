@@ -88,17 +88,19 @@ public class Tienda {
 	public  void verCamarasDisponibles() {
 		if (listaDeItems.isEmpty()) {
 			System.out.println("no hay camaras Disponibles porque no hay ninguna cargada al local");
-		}else {
-			System.out.println("las camaras disponibles son: ");
+		}else{
 			Estado disponible = new Disponible();
 
 			for (Item item : listaDeItems) {
 				
 				if(item.getEstado().equals(disponible.getNombre())) {
+					System.out.println("las camaras disponibles son: ");
 					System.out.printf("Cod Producto: %s.................Nombre: %s ........",
 							item.getCodReferencia(),
 							 item.getCamara());		
 					System.out.println(" ");	
+				}else if(item.getEstado()!= (disponible.getNombre())) {
+					System.out.println("No hay camaras disponibles para alquilar.");
 				}
 			}
 		}
