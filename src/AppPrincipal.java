@@ -40,7 +40,8 @@ public class AppPrincipal {
 				
 				break;
 			case 5:
-				
+				tienda.verCamarasAlquiladas();
+				tienda.penalizarCliente();
 				break;
 			case 6:
 				tienda.verCamarasConRetraso();

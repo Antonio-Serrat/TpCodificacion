@@ -11,6 +11,7 @@ public class Cliente {
 	private int mesesPenalizacion;
 	
 	
+	
 	public Cliente(String nombre) {
 		super();
 		this.nombre = nombre;
